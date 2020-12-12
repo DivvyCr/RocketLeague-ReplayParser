@@ -1,0 +1,207 @@
+Parsers:
+  Ball:
+    RigidBodyState:
+      actor_type: TAGame.RBActor_TA:ReplicatedRBState
+      is_selected: yes
+      custom_name: ball_data
+
+    HitTeamNumber:
+      actor_type: TAGame.Ball_TA:HitTeamNum
+      is_selected: yes
+      custom_name: hit_team_num
+
+  Car:
+    PlayerInfo:
+      actor_type: Engine.Pawn:PlayerReplicationInfo
+      is_selected: yes
+      custom_name: player_actor_id
+
+    RigidBodyState:
+      actor_type: TAGame.RBActor_TA:ReplicatedRBState
+      is_selected: yes
+      custom_name: car_data
+
+    TeamPaint:
+      actor_type: TAGame.Car_TA:TeamPaint
+      is_selected: no
+      custom_name: player_actor_id
+
+    Throttle:
+      actor_type: TAGame.Vehicle_TA:ReplicatedThrottle
+      is_selected: yes
+      custom_name: throttle
+
+    Steer:
+      actor_type: TAGame.Vehicle_TA:ReplicatedSteer
+      is_selected: yes
+      custom_name: steer
+
+    IsDriving:
+      actor_type: TAGame.Vehicle_TA:bDriving
+      is_selected: no
+      custom_name: is_driving
+
+    IsHandbrake:
+      actor_type: TAGame.Vehicle_TA:bReplicatedHandbrake
+      is_selected: yes
+      custom_name: is_handbrake
+
+  GameEvent:
+    StateName:
+      actor_type: TAGame.GameEvent_TA:ReplicatedStateName
+      is_selected: no
+      custom_name: state_name
+
+    StatEvent:
+      actor_type: TAGame.GameEvent_Soccar_TA:ReplicatedStatEvent
+      is_selected: no
+      custom_name: stat_event
+
+    MatchType:
+      actor_type: TAGame.GameEvent_TA:MatchTypeClass
+      is_selected: no
+      custom_name: match_type
+
+    SecondsRemaining:
+      actor_type: TAGame.GameEvent_Soccar_TA:SecondsRemaining
+      is_selected: yes
+      custom_name: seconds_remaining
+
+    BotSkill:
+      actor_type: TAGame.GameEvent_TA:BotSkill
+      is_selected: no
+      custom_name: bot_skill
+
+    TeamSize:
+      actor_type: TAGame.GameEvent_Team_TA:MaxTeamSize
+      is_selected: no
+      custom_name: team_size
+
+    RoundNum:
+      actor_type: TAGame.GameEvent_Soccar_TA:RoundNum
+      is_selected: no
+      custom_name: round_num
+
+    IsOvertime:
+      actor_type: TAGame.GameEvent_Soccar_TA:bOverTime
+      is_selected: yes
+      custom_name: is_overtime
+
+    IsBallHit:
+      actor_type: TAGame.GameEvent_Soccar_TA:bBallHasBeenHit
+      is_selected: yes
+      custom_name: is_ball_hit
+
+    CanVoteFF:
+      actor_type: TAGame.GameEvent_TA:bCanVoteToForfeit
+      is_selected: no
+      custom_name: can_forfeit
+
+    HasLeavePenalty:
+      actor_type: TAGame.GameEvent_TA:bHasLeaveMatchPenalty
+      is_selected: no
+      custom_name: has_leave_penalty
+
+  Player:
+    Ping:
+      actor_type: Engine.PlayerReplicationInfo:Ping
+      is_selected: yes
+      custom_name: ping
+
+    Name:
+      actor_type: Engine.PlayerReplicationInfo:PlayerName
+      is_selected: yes
+      custom_name: name
+
+    Team:
+      actor_type: Engine.PlayerReplicationInfo:Team
+      is_selected: yes
+      custom_name: team_actor_id
+
+    Score:
+      actor_type: TAGame.PRI_TA:MatchScore
+      is_selected: yes
+      custom_name: score
+
+    PlayerUniqueID:
+      actor_type: Engine.PlayerReplicationInfo:UniqueId
+      is_selected: yes
+      custom_name: player_unique_id
+
+    PlayerReplayID:
+      actor_type: Engine.PlayerReplicationInfo:PlayerID
+      is_selected: no
+      custom_name: player_replay_id
+
+    PlayerSpectatorKey:
+      actor_type: TAGame.PRI_TA:SpectatorShortcut
+      is_selected: no
+      custom_name: plyaer_spectator_key
+
+    ClubID:
+      actor_type: TAGame.PRI_TA:ClubID
+      is_selected: no
+      custom_name: club_id
+
+    SteerSensitivity:
+      actor_type: TAGame.PRI_TA:SteeringSensitivity
+      is_selected: no
+      custom_name: steer_sensitivity
+
+    Title:
+      actor_type: TAGame.PRI_TA:Title
+      is_selected: no
+      custom_name: title
+
+    PartyLeader:
+      actor_type: TAGame.PRI_TA:PartyLeader
+      is_selected: no
+      custom_name: party_leader
+
+    PersistentCamera:
+      actor_type: TAGame.PRI_TA:PersistentCamera
+      is_selected: no
+      custom_name: persistent_camera
+
+    LoadoutsOnline:
+      actor_type: TAGame.PRI_TA:ClientLoadoutsOnline
+      is_selected: no
+      custom_name: loadouts_online
+
+    Loadouts:
+      actor_type: TAGame.PRI_TA:ClientLoadouts
+      is_selected: no
+      custom_name: loadouts
+
+    GameEvent:
+      actor_type: TAGame.PRI_TA:ReplicatedGameEvent
+      is_selected: no
+      custom_name: game_event
+
+  Team:
+    TeamScore:
+      actor_type: Engine.TeamInfo:Score
+      is_selected: yes
+      custom_name: team_score
+
+  CarComponent:
+    Vehicle:
+      actor_type: TAGame.CarComponent_TA:Vehicle
+      is_selected: yes
+      custom_name: car_actor_id
+    IsActive:
+      actor_type: TAGame.CarComponent_TA:ReplicatedActive
+      is_selected: yes
+      custom_name: is_active
+
+  Boost:
+    BoostAmount:
+      actor_type: TAGame.CarComponent_Boost_TA:ReplicatedBoostAmount
+      is_selected: yes
+      custom_name: boost_amount
+
+  Dodge:
+    DodgeTorque:
+      actor_type: TAGame.CarComponent_Dodge_TA:DodgeTorque
+      is_selected: yes
+      custom_name: dodge_torque
