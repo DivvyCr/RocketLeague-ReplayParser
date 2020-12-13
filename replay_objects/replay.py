@@ -4,7 +4,7 @@ from enum import Enum
 
 import pandas
 from replay_parsing.actor_parser import ActorParser
-from replay_parsing.data_cleaner import DataCleaner
+from replay_parsing.data_formatter import DataFormatter
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -80,23 +80,14 @@ class Replay:
         self.ball = actor_parser.get_ball()
         self.game_info = actor_parser.get_game_info()
 
+        df = DataFormatter()
         for player in self.players:
-            player_dataframe = player.get_dataframe()
+            df.format_player_dataframe(player)
 
-            # Find all unique names that the player used in the game. Add them to the Player object.
-            # Delete name column in the DataFrame.
-            names = list(player_dataframe['name'].value_counts().to_dict().keys())
-            for name in names:
-                player.add_name(name[0])  # 'name' is a single-value tuple.
-            del player_dataframe['name']
-
-            # Find all indexes where the player's car was 'sleeping'.
-            # is_sleeping_series = player_dataframe['is_sleeping'].iloc[:, 0]
-            # sleeping_idxs = is_sleeping_series[is_sleeping_series == True].index.to_list()
-
-        # pandas.set_option('max_rows', None)
-        # pandas.set_option('max_columns', None)
-        # print(self.players[0].get_dataframe()['dodge_torque'].loc[0:1000])
+        pandas.set_option('max_rows', None)
+        pandas.set_option('max_columns', None)
+        print(self.players[0].names)
+        print(self.players[0].get_dataframe().columns)
 
     def get_players(self):
         return self.players

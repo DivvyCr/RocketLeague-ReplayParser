@@ -1,13 +1,4 @@
-from enum import Enum
-
-from replay_parsing.actor_parsing.base_parser import BaseParser
 from replay_parsing.actor_parsing.parse_car_components.car_component_parser import CarComponentParser
-from replay_parsing.actor_parsing.utils import handle_default
-
-
-class BoostAttributes(Enum):
-    # All attributes of a boost car component actor.
-    AMOUNT = "TAGame.CarComponent_Boost_TA:ReplicatedBoostAmount"
 
 
 class BoostParser(CarComponentParser):

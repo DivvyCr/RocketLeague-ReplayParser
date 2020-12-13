@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 class ParserFactory:
+    cfg = None
 
     def __init__(self, selected_parsers):
         self.selected_parsers = selected_parsers

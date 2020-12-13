@@ -173,6 +173,7 @@ class DataHandler:
 
         return car_aid_to_player_uid
 
+    # TODO Boost usage is not actually recorded. 'carball' assumes boost per second is (80 * 1 / .93).
     def collect_car_component_data_in_frame(self, car_aid_to_player_uid):
         """
         This method collects data on a per-car-component basis and then updates the self.player_data_by_uid variable.
