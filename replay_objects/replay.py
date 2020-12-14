@@ -84,10 +84,20 @@ class Replay:
         for player in self.players:
             df.format_player_dataframe(player)
 
+        # DODGE TORQUE:
+        # No z-axis values, because you can't generate vertical torque with flips.
+        # On keyboard, there are only 4 possible directions of torque for x- and y- axes; full forward, 'half' forward,
+        #    full left, 'half' left, and the negatives. The 'half' torques happen in diagonal flips,
+        #    so a diagonal forward-right flip will have half +ve x and half -ve y.
+        # On controller, there are a lot of possibilities but the idea is the same.
+        print(list(self.players[0].get_dataframe()['dodge_torque']['x'].round(decimals=5).value_counts().to_dict().keys()))
+        print(list(self.players[0].get_dataframe()['dodge_torque']['y'].round(decimals=5).value_counts().to_dict().keys()))
+        print(list(self.players[0].get_dataframe()['dodge_torque']['z'].round(decimals=5).value_counts().to_dict().keys()))
+
         pandas.set_option('max_rows', None)
         pandas.set_option('max_columns', None)
-        print(self.players[0].names)
-        print(self.players[0].get_dataframe().columns)
+        # print(self.players[0].names)
+        # print(self.players[0].get_dataframe().dodge_torque)
 
     def get_players(self):
         return self.players
