@@ -80,14 +80,15 @@ class Replay:
         self.ball = actor_parser.get_ball()
         self.game_info = actor_parser.get_game_info()
 
-        df = DataFormatter()
+        data_formatter = DataFormatter()
         for player in self.players:
-            df.format_player_dataframe(player)
-
-        pandas.set_option('max_rows', None)
-        pandas.set_option('max_columns', None)
-        print(self.players[0].names)
-        print(self.players[0].get_dataframe().columns)
+            data_formatter.format_player_dataframe(player)
 
     def get_players(self):
         return self.players
+
+    def get_ball(self):
+        return self.ball
+
+    def get_game_info(self):
+        return self.game_info

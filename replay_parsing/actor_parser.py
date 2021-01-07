@@ -227,6 +227,6 @@ class ActorParser:
 
     def get_game_info(self):
         if self.is_data_processed:
-            return self.data_handler.ball
+            return self.data_handler.game_info
         else:
             logger.warning("Cannot get game info before it was created.")
