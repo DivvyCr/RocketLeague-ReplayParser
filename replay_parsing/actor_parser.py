@@ -84,17 +84,15 @@ class ActorParser:
         NOTE: Actor IDs may change throughout the replay, hence the need for a current_actors dictionary.
 
         :return: A dictionary with the following structure:
+
                 {frame_idx:
-                   {'type_short1':
-                      [type1actor1_dict,
-                       type1actor2_dict,
-                       ...]},
-                    {'type_short2':
-                       [type2actor1_dict,
-                        type2actor2_dict,
-                        ...]}}
+                   {'type1':               'type2':                ...}, ...}
+                      [type1actor1_dict,      [type2actor1_dict,
+                       type1actor2_dict,       type2actor2_dict,
+                       ...],                   ...],
+
              The frame_idx is an integer of the replay video-frame that contains the actors.
-             The 'type_short' is defined in the actor's manager class. (MANAGER.type_short)
+             The 'type' is the short type defined in the actor's manager class. (MANAGER.type_short)
              The 'actor_dict' dictionaries contain the actor's data as parsed by the actor's manager class.
         """
         for frame_idx, frame in enumerate(self.replay_frames):

@@ -15,8 +15,9 @@ if __name__ == '__main__':
         buf = f.read()
         f.close()
 
-    replay = Replay(parse_replay(buf))
-    replay.parse_replay()
+    boxcars_replay = parse_replay(buf)
+    replay = Replay(boxcars_replay)
+    replay.parse_replay() # Not the same function as the boxcars' one!
 
     players = replay.get_players()
     ball = replay.get_ball()
