@@ -98,18 +98,15 @@ class DataHandler:
         car_aid_to_player_uid = self.collect_car_data_in_frame(player_aid_to_uid)
         self.collect_car_component_data_in_frame(car_aid_to_player_uid)
         self.collect_team_data_in_frame(player_uid_to_team_aid)
-        # self.full_player_data[frame_idx] = self.frame_player_data
         for player_uid in self.players_by_uid.keys():
             self.players_by_uid[player_uid].update_data(frame_idx, self.frame_player_data[player_uid])
 
         # BALL
         self.collect_ball_data_in_frame()
-        # self.full_ball_data[frame_idx] = self.frame_ball_data
         self.ball.update_data(frame_idx, self.frame_ball_data)
 
         # GAME (and Time, Time Delta)
         self.collect_game_event_data_in_frame()
-        # self.full_game_data[frame_idx] = self.frame_game_data
         self.game_info.update_data(frame_idx, self.frame_game_data)
 
     def collect_player_data_in_frame(self):
@@ -239,9 +236,6 @@ class DataHandler:
             self.game_info = GameInfo()
 
         self.frame_game_data.update(reform_data(game_event))
-
-    def update_data(self, key, value):
-        self.frame_player_data[key] = value
 
     def create_dataframes(self):
         for player in self.players_by_uid.values():
